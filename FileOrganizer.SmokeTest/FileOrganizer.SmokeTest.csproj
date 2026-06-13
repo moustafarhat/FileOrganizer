@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>FileOrganizer</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Models\OrganizeMode.cs" Link="Models\OrganizeMode.cs" />
+    <Compile Include="..\Models\PlannedOperation.cs" Link="Models\PlannedOperation.cs" />
+    <Compile Include="..\Models\RenamePattern.cs" Link="Models\RenamePattern.cs" />
+    <Compile Include="..\Models\OperationLog.cs" Link="Models\OperationLog.cs" />
+    <Compile Include="..\Models\DuplicateGroup.cs" Link="Models\DuplicateGroup.cs" />
+    <Compile Include="..\Models\Preset.cs" Link="Models\Preset.cs" />
+    <Compile Include="..\Services\Categorizer.cs" Link="Services\Categorizer.cs" />
+    <Compile Include="..\Services\Renamer.cs" Link="Services\Renamer.cs" />
+    <Compile Include="..\Services\OperationPlanner.cs" Link="Services\OperationPlanner.cs" />
+    <Compile Include="..\Services\OperationExecutor.cs" Link="Services\OperationExecutor.cs" />
+    <Compile Include="..\Services\DuplicateFinder.cs" Link="Services\DuplicateFinder.cs" />
+    <Compile Include="..\Services\ShellIntegrationService.cs" Link="Services\ShellIntegrationService.cs" />
+  </ItemGroup>
+</Project>
