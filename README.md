@@ -40,7 +40,22 @@ A cross-platform desktop app for organizing, renaming, and deduplicating files. 
 
 ---
 
-## Requirements
+## Download
+
+Ready-to-run builds for every version are on the [Releases page](https://github.com/moustafarhat/FileOrganizer/releases/latest). No .NET installation needed.
+
+| Platform | File |
+|---|---|
+| Windows x64 | `FileOrganizer-vX.Y.Z-win-x64.zip`: unzip and run `FileOrganizer.exe` |
+| Linux x64 | `FileOrganizer-vX.Y.Z-linux-x64.tar.gz`: extract and run `./FileOrganizer` |
+| macOS Apple Silicon | `FileOrganizer-vX.Y.Z-osx-arm64.tar.gz` |
+| macOS Intel | `FileOrganizer-vX.Y.Z-osx-x64.tar.gz` |
+
+On macOS the app isn't notarized, so Gatekeeper blocks the first launch. Run `xattr -d com.apple.quarantine FileOrganizer` in the extracted folder once, then start it normally.
+
+---
+
+## Requirements (building from source)
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) or later
 - Windows 10/11, modern Linux distributions, or macOS 11+
@@ -62,6 +77,8 @@ dotnet publish FileOrganizer -c Release -r win-x64    # Windows x64
 dotnet publish FileOrganizer -c Release -r linux-x64  # Linux x64
 dotnet publish FileOrganizer -c Release -r osx-arm64  # Apple Silicon
 ```
+
+Releases are automatic: bump `<Version>` in `FileOrganizer.csproj` and push to `main`. The Release workflow runs the smoke tests, builds all four platforms and publishes them as release `v<Version>`. Pushes that don't change the version don't create a release.
 
 ---
 
