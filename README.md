@@ -1,6 +1,29 @@
+<div align="center">
+
 # File Organizer
 
-A cross-platform desktop app for organizing, renaming, and deduplicating files. Built with [Avalonia](https://avaloniaui.net/) on .NET 10 — runs natively on Windows, Linux, and macOS from a single codebase.
+**Clean up any messy folder in seconds: sort, rename and de-duplicate files, with a preview before anything moves and one-click undo after.**
+
+[![CI](https://github.com/moustafarhat/FileOrganizer/actions/workflows/ci.yml/badge.svg)](https://github.com/moustafarhat/FileOrganizer/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/moustafarhat/FileOrganizer?sort=semver)](https://github.com/moustafarhat/FileOrganizer/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/moustafarhat/FileOrganizer/total)](https://github.com/moustafarhat/FileOrganizer/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-informational)
+
+![File Organizer previewing a messy Downloads folder sorted by type](docs/screenshot.png)
+
+### [⬇ Download for Windows, macOS or Linux](https://github.com/moustafarhat/FileOrganizer/releases/latest)
+
+Free · Open source · Works offline · No account, no telemetry
+
+</div>
+
+## Why File Organizer?
+
+- **Nothing happens by surprise.** Every batch shows a `source → target` preview first, and **Undo last batch** puts every file back.
+- **Your files stay on your machine.** The app never connects to the internet or uploads anything.
+- **One app, every OS.** Native builds for Windows, macOS and Linux with no runtime to install.
+- **Built for real clutter.** Downloads folders, photo dumps, old project drives: organize, bulk-rename and remove duplicates across many folders at once.
 
 ---
 
@@ -64,18 +87,18 @@ On macOS the app isn't notarized, so Gatekeeper blocks the first launch. Run `xa
 
 ## Getting started
 
-```powershell
-git clone <repository-url>
+```sh
+git clone https://github.com/moustafarhat/FileOrganizer.git
 cd FileOrganizer
-dotnet run --project FileOrganizer
+dotnet run
 ```
 
 To build a release executable:
 
-```powershell
-dotnet publish FileOrganizer -c Release -r win-x64    # Windows x64
-dotnet publish FileOrganizer -c Release -r linux-x64  # Linux x64
-dotnet publish FileOrganizer -c Release -r osx-arm64  # Apple Silicon
+```sh
+dotnet publish FileOrganizer.csproj -c Release -r win-x64    # Windows x64
+dotnet publish FileOrganizer.csproj -c Release -r linux-x64  # Linux x64
+dotnet publish FileOrganizer.csproj -c Release -r osx-arm64  # Apple Silicon
 ```
 
 Releases are automatic: bump `<Version>` in `FileOrganizer.csproj` and push to `main`. The Release workflow runs the smoke tests, builds all four platforms and publishes them as release `v<Version>`. Pushes that don't change the version don't create a release.
@@ -164,17 +187,17 @@ The **Services** layer is pure C# with no Avalonia dependencies — that's what 
 
 ### Build
 
-```powershell
-dotnet build FileOrganizer
+```sh
+dotnet build FileOrganizer.csproj
 ```
 
 ### Run the GUI
 
-```powershell
-dotnet run --project FileOrganizer
+```sh
+dotnet run
 
 # Or launch with a folder preloaded (also works via shell integration):
-dotnet run --project FileOrganizer -- "C:\Downloads"
+dotnet run -- "C:\Downloads"
 ```
 
 ### Run smoke tests
@@ -211,6 +234,10 @@ Ideas that aren't built yet, in rough priority order:
 
 ---
 
+## Contributing
+
+Contributions are welcome, from bug reports to new features. Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started, and see the [Roadmap](#roadmap) for ideas. If File Organizer saves you time, a ⭐ helps other people find it.
+
 ## License
 
-MIT
+[MIT](LICENSE) © Moustafa Farhat
