@@ -87,7 +87,7 @@ jobs:
           chmod +x publish/FileOrganizer
           tar -czf "FileOrganizer-${{ needs.version.outputs.tag }}-${{ matrix.rid }}.tar.gz" -C publish .
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.rid }}
           path: FileOrganizer-*
